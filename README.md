@@ -14,7 +14,7 @@
     -	My goal is to build a model that captures the signals from repetitive temporal, interactions and proximity features.
 
 -	Modeling Overview:
-    -	Running walkforward 4 fold cross validation, re-training the model with each year addition while feature engineering within fold. `RMSE` will be calculated per fold and final evaluation will be based on Last fold score as it is most representative given full training data. Its expected to have a decreasing score per fold.
+    -	Running progressive 4 fold validation, re-training the model with each year addition and feature engineering within fold. `RMSE` will be calculated per fold and final evaluation will be based on Last fold score as it is most representative given full training data. Its expected to have a decreasing score per fold.
 
 -	Modeling steps - per fold:
     -	Feature Engineering: 
@@ -42,9 +42,10 @@
         -	Fixed seed was used for all estimators to ensure consistency of results
 
     -	Run time (including training and prediction):
-        -	`lgb` 4 fold cross validation without feature engineering: ~1 seconds per fold
-        -	`lgb` 4 fold cross validation with feature engineering: ~4 seconds per fold
-        -	`Voting Regressor` 4 fold cross validation with feature engineering: ~34 seconds per fold
+        -	`lgb` 4 fold validation without feature engineering: ~1 seconds per fold
+        -	`lgb` 4 fold validation with feature engineering: ~4 seconds per fold
+        -	`Voting Regressor` 4 fold validation with feature engineering: ~34 seconds per fold
+        - `Voting Regressor` on full training data for final submission with feature engineering: ~50 seconds
 
     -	Setting thresholds:
         -	Predictions are clipped to be in the range of 0 and 1, thus negative predictions are eliminated. This is reflected in the `rmse` reported per each validation fold
