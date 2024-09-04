@@ -53,4 +53,4 @@
 
 [My YouTube Channel](https://youtube.com/@ammopy)
 
-![Model](https://github.com/AmMoPy/Wildfire_Prediction_Challenge/blob/main/Machine_learning_project_fire_area_prediction.jpg) 
+![Model](https://github.com/AmMoPy/Wildfire_Prediction_Challenge/blob/main/Machine_learning_project_fire_area_predictions.jpg) 
